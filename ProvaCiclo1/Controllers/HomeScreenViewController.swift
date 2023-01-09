@@ -10,6 +10,7 @@ import UIKit
 class HomeScreenViewController: UIViewController {
 
     var addConstraintsHome = HomeScreenView()
+    var list: List?
     
     override func loadView() {
         view = addConstraintsHome
@@ -24,6 +25,10 @@ class HomeScreenViewController: UIViewController {
         addConstraintsHome.seeRecipeButton.addTarget(self, action: #selector(navigationRecipe), for: .touchUpInside)
     }
     
+    func getData(data: List) {
+        self.list = data
+    }
+    
     @objc func navigationRegister() {
         let goRegister = RegisterScreenViewController()
         self.navigationController?.pushViewController(goRegister, animated: true)
@@ -31,6 +36,11 @@ class HomeScreenViewController: UIViewController {
     
     @objc func navigationRecipe() {
         let goRecipe = RecipeScreenCollectionViewController()
+        
+        if let list = self.list {
+            goRecipe.getData(data: list)
+        }
+        
         self.navigationController?.pushViewController(goRecipe, animated: true)
     }
 }

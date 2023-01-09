@@ -26,8 +26,15 @@ class RegisterScreenViewController: UIViewController {
             print("Error")
         } else {
             let goHome = HomeScreenViewController()
+            goHome.getData(data: dataRecipe())
             navigationController?.pushViewController(goHome, animated: true)
         }
+    }
+    
+    func dataRecipe() -> List {
+        let data = List(ingredient1: addConstraintsRegister.ingredient1TxtField.text, ingredient2: addConstraintsRegister.ingredient2TxtField.text, ingredient3: addConstraintsRegister.ingredient3TxtField.text, ingredient4: addConstraintsRegister.ingredient4TxtField.text, ingredient5: addConstraintsRegister.ingredient5TxtField.text)
+        
+        return data
     }
     
     @objc func goHomeScreen() {

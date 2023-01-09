@@ -21,6 +21,7 @@
 		4D492B9C29685AF200F607AD /* RegisterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D492B9B29685AF200F607AD /* RegisterScreenView.swift */; };
 		4D492B9E29686A8D00F607AD /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D492B9D29686A8D00F607AD /* List.swift */; };
 		4D4DE81529689000006362F3 /* RecipeCollectionScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DE81429689000006362F3 /* RecipeCollectionScreenView.swift */; };
+		4D4DE817296C78D3006362F3 /* RecipeDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DE816296C78D3006362F3 /* RecipeDetailsScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		4D492B9B29685AF200F607AD /* RegisterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenView.swift; sourceTree = "<group>"; };
 		4D492B9D29686A8D00F607AD /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		4D4DE81429689000006362F3 /* RecipeCollectionScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionScreenView.swift; sourceTree = "<group>"; };
+		4D4DE816296C78D3006362F3 /* RecipeDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				4D492B7B29684F5C00F607AD /* HomeScreenViewController.swift */,
 				4D492B97296857E600F607AD /* RegisterScreenViewController.swift */,
 				4D24D1A129688B0D00FB4F91 /* RecipeScreenCollectionViewController.swift */,
+				4D4DE816296C78D3006362F3 /* RecipeDetailsScreenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			files = (
 				4D492B94296854C400F607AD /* HomeScreenView.swift in Sources */,
 				4D492B9E29686A8D00F607AD /* List.swift in Sources */,
+				4D4DE817296C78D3006362F3 /* RecipeDetailsScreenViewController.swift in Sources */,
 				4D492B7C29684F5C00F607AD /* HomeScreenViewController.swift in Sources */,
 				4D24D1A429688C3200FB4F91 /* BaseView.swift in Sources */,
 				4D4DE81529689000006362F3 /* RecipeCollectionScreenView.swift in Sources */,

@@ -11,6 +11,7 @@ class RecipeScreenCollectionViewController: UIViewController {
     
     var customView = RecipeCollectionScreenView()
     
+    var list: [List]?
     
     private let cellId = "cellId"
     
@@ -28,28 +29,41 @@ class RecipeScreenCollectionViewController: UIViewController {
         customView.collectionView.delegate = self
         customView.collectionView.register(RecipeCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
     }
+    
+    func getData(data: List) {
+        list = [data]
+    }
 }
 
 extension RecipeScreenCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 10
+        if let item = list?.count {
+            return item
+        }
+
+        return 0
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? RecipeCollectionViewCell
         
-        
-        return cell
+        if let item = list?[indexPath.item] {
+            cell?.list = item
+        }
+
+        return cell ?? UICollectionViewCell()
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: view.bounds.width, height: 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            
-        }
+        let recipeDetails = RecipeDetailsScreenViewController()
+        recipeDetails.getIndexPath(index: indexPath.row)
+        self.navigationController?.pushViewController(recipeDetails, animated: true)
+    }
 }

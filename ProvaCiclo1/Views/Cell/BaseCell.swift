@@ -14,7 +14,7 @@ class BaseCell: UICollectionViewCell{
         addSubview()
         setConstraint()
         
-        backgroundColor = .black
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder){
