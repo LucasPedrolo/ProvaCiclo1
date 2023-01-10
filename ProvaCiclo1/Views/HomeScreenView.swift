@@ -48,16 +48,4 @@ class HomeScreenView: BaseView {
         addSubview(registerButton)
         addSubview(seeRecipeButton)
     }
-    
-    
-//    func addConstraints(){
-//        addSubview(registerButton)
-//        addSubview(seeRecipeButton)
-//
-//        registerButton.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 200, left: 70, bottom: 0, right: 70), size: .init(width: 200, height: 100))
-//
-//        seeRecipeButton.anchor(top: registerButton.bottomAnchor, leading: registerButton.leadingAnchor, bottom: nil, trailing: registerButton.trailingAnchor, padding: .init(top: 80, left: 0, bottom: 0, right: 0), size: .init(width: 200, height: 100))
-//    }
-//
-    
 }

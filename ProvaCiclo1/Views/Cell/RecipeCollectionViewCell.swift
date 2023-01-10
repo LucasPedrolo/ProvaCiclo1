@@ -29,6 +29,14 @@ class RecipeCollectionViewCell: BaseCell {
         return test
     }()
     
+    lazy var image: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "recipe2")
+        image.contentMode = .scaleAspectFit
+        
+        return image
+    }()
+    
     lazy var label: UILabel = {
         let label1 = UILabel()
         label1.text = "Ingredients 1"
@@ -36,7 +44,7 @@ class RecipeCollectionViewCell: BaseCell {
         label1.font = UIFont.systemFont(ofSize: 15)
         label1.textAlignment = .center
         label1.layer.cornerRadius = 2
-        label1.layer.borderWidth = 1
+        label1.layer.borderWidth = 0
         
         return label1
     }()
@@ -47,7 +55,7 @@ class RecipeCollectionViewCell: BaseCell {
         label1.textColor = .black
         label1.font = UIFont.systemFont(ofSize: 15)
         label1.textAlignment = .center
-        label1.layer.borderWidth = 1
+        label1.layer.borderWidth = 0
         
         return label1
     }()
@@ -58,7 +66,7 @@ class RecipeCollectionViewCell: BaseCell {
         label1.textColor = .black
         label1.font = UIFont.systemFont(ofSize: 15)
         label1.textAlignment = .center
-        label1.layer.borderWidth = 1
+        label1.layer.borderWidth = 0
         
         return label1
     }()
@@ -69,7 +77,7 @@ class RecipeCollectionViewCell: BaseCell {
         label1.textColor = .black
         label1.font = UIFont.systemFont(ofSize: 15)
         label1.textAlignment = .center
-        label1.layer.borderWidth = 1
+        label1.layer.borderWidth = 0
         
         return label1
     }()
@@ -80,7 +88,7 @@ class RecipeCollectionViewCell: BaseCell {
         label1.textColor = .black
         label1.font = UIFont.systemFont(ofSize: 15)
         label1.textAlignment = .center
-        label1.layer.borderWidth = 1
+        label1.layer.borderWidth = 0
         
         return label1
     }()
@@ -90,17 +98,24 @@ class RecipeCollectionViewCell: BaseCell {
         container.addSubview(label)
         container.addSubview(label2)
         container.addSubview(label3)
-//        container.addSubview(label4)
-//        container.addSubview(label5)
+        container.addSubview(label4)
+        container.addSubview(label5)
+        container.addSubview(image)
     }
     
     override func setConstraint() {
         container.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, trailing: safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 8, bottom: 0, right: 8), size: .init(width: frame.width, height: 10))
-        label.anchor(top: nil, leading: container.leadingAnchor, bottom: container.bottomAnchor, trailing: container.trailingAnchor, padding: .init(top: 0, left: 125, bottom: 50, right: 125), size: .init(width: 90, height: 20))
-        label2.anchor(top: label.bottomAnchor, leading: label.leadingAnchor, bottom: nil, trailing: label.trailingAnchor, padding: .init(top: 1, left: 0, bottom: 0, right: 0), size: .init(width: 90, height: 20))
-        label3.anchor(top: label2.bottomAnchor, leading: label2.leadingAnchor, bottom: label2.bottomAnchor, trailing: label2.trailingAnchor, padding: .init(top: 5, left: 90, bottom: 0, right: 0), size: .init(width: 90, height: 20))
-//        label4.anchor(top: label3.bottomAnchor, leading: label3.leadingAnchor, bottom: label3.bottomAnchor, trailing: label3.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 20, right: 0), size: .init(width: 50, height: 50))
-//        label5.anchor(top: label4.bottomAnchor, leading: label4.leadingAnchor, bottom: label4.bottomAnchor, trailing: label4.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 20, right: 0), size: .init(width: 50, height: 50))
+        
+        label.anchor(top: nil, leading: container.leadingAnchor, bottom: container.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 150, bottom: 50, right: 0), size: .init(width: 90, height: 15))
+        
+        label2.anchor(top: label.bottomAnchor, leading: label.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 5, left: 0, bottom: 0, right: 0), size: .init(width: 90, height: 15))
+        
+        label3.anchor(top: label2.bottomAnchor, leading: label2.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 5, left: 0, bottom: 0, right: 0), size: .init(width: 90, height: 15))
+        
+        label4.anchor(top: nil, leading: label.trailingAnchor, bottom: label.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 5, bottom: -10, right: 0), size: .init(width: 90, height: 15))
+        
+        label5.anchor(top: label4.bottomAnchor, leading: label4.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: 5, left: 0, bottom: 0, right: 0), size: .init(width: 90, height: 15))
+        
+        image.anchor(top: label.topAnchor, leading: nil, bottom: nil, trailing: label.leadingAnchor, padding: .init(top: -25, left: 0, bottom: 0, right: 35), size: .init(width: 100, height: 100))
     }
-    
 }
