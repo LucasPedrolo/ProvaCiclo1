@@ -11,7 +11,7 @@ class RecipeDetailsScreenViewController: UIViewController {
     
     var addConstraints = RecipeDetailsScreenView()
     
-//    var list: [List]?
+    //    var list: [List]?
     
     override func loadView() {
         view = addConstraints

@@ -19,7 +19,7 @@ class HomeScreenView: BaseView {
         register.layer.cornerRadius = 20
         register.layer.borderWidth = 2
         register.layer.borderColor = UIColor.black.cgColor
-
+        
         return register
     }()
     

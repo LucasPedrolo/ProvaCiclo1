@@ -18,11 +18,21 @@ class RegisterScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addConstraintsRegister.descTxtField.delegate = self
+        addDelegate()
         
         addConstraintsRegister.goHomeButton.addTarget(self, action: #selector(goHomeScreen), for: .touchUpInside)
     }
-
+    
+    func addDelegate() {
+        addConstraintsRegister.recipeTitleTxtField.delegate = self
+        addConstraintsRegister.ingredient1TxtField.delegate = self
+        addConstraintsRegister.ingredient2TxtField.delegate = self
+        addConstraintsRegister.ingredient3TxtField.delegate = self
+        addConstraintsRegister.ingredient4TxtField.delegate = self
+        addConstraintsRegister.ingredient5TxtField.delegate = self
+        addConstraintsRegister.descTxtField.delegate = self
+    }
+    
     func validateRegister() {
         if addConstraintsRegister.ingredient1TxtField.text == "" || addConstraintsRegister.ingredient2TxtField.text == "" || addConstraintsRegister.ingredient3TxtField.text == "" || addConstraintsRegister.ingredient4TxtField.text == "" || addConstraintsRegister.ingredient5TxtField.text == "" {
             print("Error")
@@ -34,7 +44,7 @@ class RegisterScreenViewController: UIViewController {
     }
     
     func dataRecipe() -> List {
-        let data = List(ingredient1: addConstraintsRegister.ingredient1TxtField.text, ingredient2: addConstraintsRegister.ingredient2TxtField.text, ingredient3: addConstraintsRegister.ingredient3TxtField.text, ingredient4: addConstraintsRegister.ingredient4TxtField.text, ingredient5: addConstraintsRegister.ingredient5TxtField.text, desc: addConstraintsRegister.descTxtField.text)
+        let data = List(ingredient1: addConstraintsRegister.ingredient1TxtField.text, ingredient2: addConstraintsRegister.ingredient2TxtField.text, ingredient3: addConstraintsRegister.ingredient3TxtField.text, ingredient4: addConstraintsRegister.ingredient4TxtField.text, ingredient5: addConstraintsRegister.ingredient5TxtField.text, desc: addConstraintsRegister.descTxtField.text, recipeName: addConstraintsRegister.recipeTitleTxtField.text)
         
         return data
     }
@@ -46,4 +56,30 @@ class RegisterScreenViewController: UIViewController {
 
 extension RegisterScreenViewController: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.isEqual(addConstraintsRegister.recipeTitleTxtField) {
+            addConstraintsRegister.ingredient1TxtField.becomeFirstResponder()
+        }
+        if textField.isEqual(addConstraintsRegister.ingredient1TxtField) {
+            addConstraintsRegister.ingredient2TxtField.becomeFirstResponder()
+        }
+        if textField.isEqual(addConstraintsRegister.ingredient2TxtField) {
+            addConstraintsRegister.ingredient3TxtField.becomeFirstResponder()
+        }
+        if textField.isEqual(addConstraintsRegister.ingredient3TxtField) {
+            addConstraintsRegister.ingredient4TxtField.becomeFirstResponder()
+        }
+        if textField.isEqual(addConstraintsRegister.ingredient4TxtField) {
+            addConstraintsRegister.ingredient5TxtField.becomeFirstResponder()
+        }
+        if textField.isEqual(addConstraintsRegister.ingredient5TxtField) {
+            addConstraintsRegister.descTxtField.becomeFirstResponder()
+        } else {
+            addConstraintsRegister.descTxtField.resignFirstResponder()
+            validateRegister()
+        }
+        
+        return true
+    }
 }

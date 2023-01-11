@@ -25,7 +25,6 @@ class RecipeCollectionScreenView: BaseView {
     }()
     
     override func addSubviews() {
-//        collectionView.frame = bounds
         addSubview(collectionView)
     }
     

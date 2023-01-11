@@ -9,6 +9,20 @@ import UIKit
 
 class RegisterScreenView: BaseView {
     
+    lazy var recipeTitleTxtField: UITextField = {
+        let recipeTitle = UITextField()
+        recipeTitle.placeholder = "Recipe Name"
+        recipeTitle.borderStyle = UITextField.BorderStyle.roundedRect
+        recipeTitle.autocorrectionType = UITextAutocorrectionType.no
+        recipeTitle.keyboardType = UIKeyboardType.default
+        recipeTitle.returnKeyType = UIReturnKeyType.done
+        recipeTitle.clearButtonMode = UITextField.ViewMode.whileEditing
+        recipeTitle.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        recipeTitle.autocapitalizationType = .none
+        
+        return recipeTitle
+    }()
+    
     lazy var ingredient1TxtField: UITextField = {
         let ingredient1 = UITextField()
         ingredient1.placeholder = "First Ingredient"
@@ -19,7 +33,7 @@ class RegisterScreenView: BaseView {
         ingredient1.clearButtonMode = UITextField.ViewMode.whileEditing
         ingredient1.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         ingredient1.autocapitalizationType = .none
-
+        
         return ingredient1
     }()
     
@@ -33,7 +47,7 @@ class RegisterScreenView: BaseView {
         ingredient2.clearButtonMode = UITextField.ViewMode.whileEditing
         ingredient2.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         ingredient2.autocapitalizationType = .none
-
+        
         return ingredient2
     }()
     
@@ -47,7 +61,7 @@ class RegisterScreenView: BaseView {
         ingredient3.clearButtonMode = UITextField.ViewMode.whileEditing
         ingredient3.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         ingredient3.autocapitalizationType = .none
-
+        
         return ingredient3
     }()
     
@@ -61,7 +75,7 @@ class RegisterScreenView: BaseView {
         ingredient4.clearButtonMode = UITextField.ViewMode.whileEditing
         ingredient4.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         ingredient4.autocapitalizationType = .none
-
+        
         return ingredient4
     }()
     
@@ -75,7 +89,7 @@ class RegisterScreenView: BaseView {
         ingredient5.clearButtonMode = UITextField.ViewMode.whileEditing
         ingredient5.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         ingredient5.autocapitalizationType = .none
-
+        
         return ingredient5
     }()
     
@@ -118,7 +132,7 @@ class RegisterScreenView: BaseView {
         
         return titleLbl
     }()
-
+    
     override func addSubviews() {
         addSubview(ingredient1TxtField)
         addSubview(ingredient2TxtField)
@@ -128,10 +142,11 @@ class RegisterScreenView: BaseView {
         addSubview(descTxtField)
         addSubview(goHomeButton)
         addSubview(titleLabel)
+        addSubview(recipeTitleTxtField)
     }
     
     override func setConstraints() {
-        ingredient1TxtField.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 50, left: 20, bottom: 0, right: 20), size: .init(width: 250, height: 40))
+        ingredient1TxtField.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 110, left: 20, bottom: 0, right: 20), size: .init(width: 250, height: 40))
         
         ingredient2TxtField.anchor(top: ingredient1TxtField.bottomAnchor, leading: ingredient1TxtField.leadingAnchor, bottom: nil, trailing: ingredient1TxtField.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 250, height: 40))
         
@@ -143,8 +158,10 @@ class RegisterScreenView: BaseView {
         
         descTxtField.anchor(top: ingredient5TxtField.bottomAnchor, leading: ingredient5TxtField.leadingAnchor, bottom: nil, trailing: ingredient5TxtField.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 250, height: 200))
         
-        goHomeButton.anchor(top: ingredient5TxtField.bottomAnchor, leading: ingredient5TxtField.leadingAnchor, bottom: nil, trailing: ingredient5TxtField.trailingAnchor, padding: .init(top: 270, left: 70, bottom: 0, right: 70), size: .init(width: 50, height: 40))
+        goHomeButton.anchor(top: ingredient5TxtField.bottomAnchor, leading: ingredient5TxtField.leadingAnchor, bottom: nil, trailing: ingredient5TxtField.trailingAnchor, padding: .init(top: 250, left: 70, bottom: 0, right: 70), size: .init(width: 50, height: 40))
         
-        titleLabel.anchor(top: nil, leading: ingredient1TxtField.leadingAnchor, bottom: ingredient1TxtField.topAnchor, trailing: ingredient1TxtField.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 250, height: 60))
+        titleLabel.anchor(top: nil, leading: ingredient1TxtField.leadingAnchor, bottom: ingredient1TxtField.topAnchor, trailing: ingredient1TxtField.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 60, right: 0), size: .init(width: 250, height: 60))
+        
+        recipeTitleTxtField.anchor(top: nil, leading: ingredient1TxtField.leadingAnchor, bottom: ingredient1TxtField.topAnchor, trailing: ingredient1TxtField.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 20, right: 0), size: .init(width: 250, height: 40))
     }
 }

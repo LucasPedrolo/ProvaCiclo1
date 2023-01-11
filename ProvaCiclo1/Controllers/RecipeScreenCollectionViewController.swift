@@ -41,10 +41,10 @@ extension RecipeScreenCollectionViewController: UICollectionViewDelegate, UIColl
         if let item = list?.count {
             return item
         }
-
+        
         return 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? RecipeCollectionViewCell
@@ -52,10 +52,10 @@ extension RecipeScreenCollectionViewController: UICollectionViewDelegate, UIColl
         if let item = list?[indexPath.item] {
             cell?.list = item
         }
-
+        
         return cell ?? UICollectionViewCell()
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: view.bounds.width, height: 80)
@@ -66,6 +66,6 @@ extension RecipeScreenCollectionViewController: UICollectionViewDelegate, UIColl
         if let list = self.list {
             recipeDetails.getData(data: list[indexPath.item])
         }
-        self.navigationController?.pushViewController(recipeDetails, animated: true)
+        self.navigationController?.present(recipeDetails, animated: true)
     }
 }
