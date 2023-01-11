@@ -63,7 +63,9 @@ extension RecipeScreenCollectionViewController: UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let recipeDetails = RecipeDetailsScreenViewController()
-        recipeDetails.getIndexPath(index: indexPath.row)
+        if let list = self.list {
+            recipeDetails.getData(data: list[indexPath.item])
+        }
         self.navigationController?.pushViewController(recipeDetails, animated: true)
     }
 }

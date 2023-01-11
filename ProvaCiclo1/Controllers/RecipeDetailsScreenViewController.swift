@@ -9,13 +9,15 @@ import UIKit
 
 class RecipeDetailsScreenViewController: UIViewController {
     
-    var list: [List]?
+    var addConstraints = RecipeDetailsScreenView()
     
-    func getIndexPath(index: Int) {
-        print("Esse é o indice: ", index)
+//    var list: [List]?
+    
+    override func loadView() {
+        view = addConstraints
     }
     
     func getData(data: List) {
-        list = [data]
+        addConstraints.list = data
     }
 }

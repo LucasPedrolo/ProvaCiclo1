@@ -18,6 +18,8 @@ class RegisterScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addConstraintsRegister.descTxtField.delegate = self
+        
         addConstraintsRegister.goHomeButton.addTarget(self, action: #selector(goHomeScreen), for: .touchUpInside)
     }
 
@@ -32,7 +34,7 @@ class RegisterScreenViewController: UIViewController {
     }
     
     func dataRecipe() -> List {
-        let data = List(ingredient1: addConstraintsRegister.ingredient1TxtField.text, ingredient2: addConstraintsRegister.ingredient2TxtField.text, ingredient3: addConstraintsRegister.ingredient3TxtField.text, ingredient4: addConstraintsRegister.ingredient4TxtField.text, ingredient5: addConstraintsRegister.ingredient5TxtField.text)
+        let data = List(ingredient1: addConstraintsRegister.ingredient1TxtField.text, ingredient2: addConstraintsRegister.ingredient2TxtField.text, ingredient3: addConstraintsRegister.ingredient3TxtField.text, ingredient4: addConstraintsRegister.ingredient4TxtField.text, ingredient5: addConstraintsRegister.ingredient5TxtField.text, desc: addConstraintsRegister.descTxtField.text)
         
         return data
     }
@@ -40,4 +42,8 @@ class RegisterScreenViewController: UIViewController {
     @objc func goHomeScreen() {
         validateRegister()
     }
+}
+
+extension RegisterScreenViewController: UITextFieldDelegate {
+    
 }

@@ -79,6 +79,21 @@ class RegisterScreenView: BaseView {
         return ingredient5
     }()
     
+    lazy var descTxtField: UITextField = {
+        let desc = UITextField()
+        desc.placeholder = "Description"
+        desc.borderStyle = UITextField.BorderStyle.roundedRect
+        desc.autocorrectionType = UITextAutocorrectionType.no
+        desc.keyboardType = UIKeyboardType.default
+        desc.returnKeyType = UIReturnKeyType.done
+        desc.clearButtonMode = UITextField.ViewMode.whileEditing
+        desc.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        desc.autocapitalizationType = .none
+        desc.textAlignment = .center
+        
+        return desc
+    }()
+    
     lazy var goHomeButton: UIButton = {
         let goHome = UIButton(type: .custom)
         goHome.setTitle("Recipes", for: .normal)
@@ -110,12 +125,13 @@ class RegisterScreenView: BaseView {
         addSubview(ingredient3TxtField)
         addSubview(ingredient4TxtField)
         addSubview(ingredient5TxtField)
+        addSubview(descTxtField)
         addSubview(goHomeButton)
         addSubview(titleLabel)
     }
     
     override func setConstraints() {
-        ingredient1TxtField.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 100, left: 20, bottom: -50, right: 20), size: .init(width: 250, height: 40))
+        ingredient1TxtField.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, bottom: nil, trailing: safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 50, left: 20, bottom: 0, right: 20), size: .init(width: 250, height: 40))
         
         ingredient2TxtField.anchor(top: ingredient1TxtField.bottomAnchor, leading: ingredient1TxtField.leadingAnchor, bottom: nil, trailing: ingredient1TxtField.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 250, height: 40))
         
@@ -125,8 +141,10 @@ class RegisterScreenView: BaseView {
         
         ingredient5TxtField.anchor(top: ingredient4TxtField.bottomAnchor, leading: ingredient4TxtField.leadingAnchor, bottom: nil, trailing: ingredient4TxtField.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 250, height: 40))
         
-        goHomeButton.anchor(top: ingredient5TxtField.bottomAnchor, leading: ingredient5TxtField.leadingAnchor, bottom: nil, trailing: ingredient5TxtField.trailingAnchor, padding: .init(top: 200, left: 70, bottom: 0, right: 70), size: .init(width: 50, height: 40))
+        descTxtField.anchor(top: ingredient5TxtField.bottomAnchor, leading: ingredient5TxtField.leadingAnchor, bottom: nil, trailing: ingredient5TxtField.trailingAnchor, padding: .init(top: 20, left: 0, bottom: 0, right: 0), size: .init(width: 250, height: 200))
         
-        titleLabel.anchor(top: nil, leading: ingredient1TxtField.leadingAnchor, bottom: ingredient1TxtField.topAnchor, trailing: ingredient1TxtField.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 40, right: 0), size: .init(width: 250, height: 60))
+        goHomeButton.anchor(top: ingredient5TxtField.bottomAnchor, leading: ingredient5TxtField.leadingAnchor, bottom: nil, trailing: ingredient5TxtField.trailingAnchor, padding: .init(top: 270, left: 70, bottom: 0, right: 70), size: .init(width: 50, height: 40))
+        
+        titleLabel.anchor(top: nil, leading: ingredient1TxtField.leadingAnchor, bottom: ingredient1TxtField.topAnchor, trailing: ingredient1TxtField.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 250, height: 60))
     }
 }
