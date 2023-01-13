@@ -31,7 +31,7 @@ class HomeScreenViewController: UIViewController {
     
     @objc func navigationRegister() {
         let goRegister = RegisterScreenViewController()
-        self.navigationController?.pushViewController(goRegister, animated: true)
+        navigationController?.pushViewController(goRegister, animated: true)
     }
     
     @objc func navigationRecipe() {
@@ -41,7 +41,6 @@ class HomeScreenViewController: UIViewController {
             goRecipe.getData(data: list)
         }
         
-        self.navigationController?.pushViewController(goRecipe, animated: true)
+        navigationController?.pushViewController(goRecipe, animated: true)
     }
 }
-

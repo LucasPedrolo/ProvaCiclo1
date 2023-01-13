@@ -23,6 +23,7 @@
 		4D4DE81529689000006362F3 /* RecipeCollectionScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DE81429689000006362F3 /* RecipeCollectionScreenView.swift */; };
 		4D4DE817296C78D3006362F3 /* RecipeDetailsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DE816296C78D3006362F3 /* RecipeDetailsScreenViewController.swift */; };
 		4D4DE819296ED573006362F3 /* RecipeDetailsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DE818296ED573006362F3 /* RecipeDetailsScreenView.swift */; };
+		4D7E7BAE29706CF8006B79F4 /* RegisterScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7E7BAD29706CF8006B79F4 /* RegisterScreenViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4D4DE81429689000006362F3 /* RecipeCollectionScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionScreenView.swift; sourceTree = "<group>"; };
 		4D4DE816296C78D3006362F3 /* RecipeDetailsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsScreenViewController.swift; sourceTree = "<group>"; };
 		4D4DE818296ED573006362F3 /* RecipeDetailsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsScreenView.swift; sourceTree = "<group>"; };
+		4D7E7BAD29706CF8006B79F4 /* RegisterScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				4D492B8B29684FE400F607AD /* Commons */,
 				4D492B8C29684FF000F607AD /* Models */,
+				4D7E7BAA29706AE3006B79F4 /* ViewModel */,
 				4D492B8D29684FF700F607AD /* Views */,
 				4D492B8E29684FFC00F607AD /* Controllers */,
 				4D492B8F2968500700F607AD /* Delegates */,
@@ -159,6 +162,14 @@
 				4D492B8029684F5D00F607AD /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4D7E7BAA29706AE3006B79F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4D7E7BAD29706CF8006B79F4 /* RegisterScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +251,7 @@
 				4D492B962968555300F607AD /* UIView+Extension.swift in Sources */,
 				4D4DE819296ED573006362F3 /* RecipeDetailsScreenView.swift in Sources */,
 				4D24D19D296888DB00FB4F91 /* BaseCell.swift in Sources */,
+				4D7E7BAE29706CF8006B79F4 /* RegisterScreenViewModel.swift in Sources */,
 				4D492B7829684F5C00F607AD /* AppDelegate.swift in Sources */,
 				4D24D1A0296889BC00FB4F91 /* RecipeCollectionViewCell.swift in Sources */,
 				4D492B9C29685AF200F607AD /* RegisterScreenView.swift in Sources */,

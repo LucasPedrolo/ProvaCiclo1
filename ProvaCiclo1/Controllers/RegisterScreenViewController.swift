@@ -10,6 +10,9 @@ import UIKit
 class RegisterScreenViewController: UIViewController {
     
     var addConstraintsRegister = RegisterScreenView()
+    var viewModel = RegisterScreenViewModel()
+    
+    
     
     override func loadView() {
         view = addConstraintsRegister
@@ -33,24 +36,23 @@ class RegisterScreenViewController: UIViewController {
         addConstraintsRegister.descTxtField.delegate = self
     }
     
-    func validateRegister() {
-        if addConstraintsRegister.ingredient1TxtField.text == "" || addConstraintsRegister.ingredient2TxtField.text == "" || addConstraintsRegister.ingredient3TxtField.text == "" || addConstraintsRegister.ingredient4TxtField.text == "" || addConstraintsRegister.ingredient5TxtField.text == "" {
-            print("Error")
-        } else {
-            let goHome = HomeScreenViewController()
-            goHome.getData(data: dataRecipe())
-            navigationController?.pushViewController(goHome, animated: true)
-        }
-    }
-    
-    func dataRecipe() -> List {
-        let data = List(ingredient1: addConstraintsRegister.ingredient1TxtField.text, ingredient2: addConstraintsRegister.ingredient2TxtField.text, ingredient3: addConstraintsRegister.ingredient3TxtField.text, ingredient4: addConstraintsRegister.ingredient4TxtField.text, ingredient5: addConstraintsRegister.ingredient5TxtField.text, desc: addConstraintsRegister.descTxtField.text, recipeName: addConstraintsRegister.recipeTitleTxtField.text)
-        
-        return data
-    }
-    
     @objc func goHomeScreen() {
-        validateRegister()
+        let goHome = HomeScreenViewController()
+        let validation = viewModel.dataRecipe(
+            ingredient1: addConstraintsRegister.ingredient1TxtField.text ?? defString,
+            ingredient2: addConstraintsRegister.ingredient2TxtField.text ?? defString,
+            ingredient3: addConstraintsRegister.ingredient3TxtField.text ?? defString,
+            ingredient4: addConstraintsRegister.ingredient4TxtField.text ?? defString,
+            ingredient5: addConstraintsRegister.ingredient5TxtField.text ?? defString,
+            desc: addConstraintsRegister.descTxtField.text ?? defString,
+            recipeName: addConstraintsRegister.recipeTitleTxtField.text ?? defString)
+        
+        if  validation != nil {
+            goHome.getData(data: validation ?? List())
+            navigationController?.pushViewController(goHome, animated: true)
+        } else {
+            print("error")
+        }
     }
 }
 
@@ -77,7 +79,7 @@ extension RegisterScreenViewController: UITextFieldDelegate {
             addConstraintsRegister.descTxtField.becomeFirstResponder()
         } else {
             addConstraintsRegister.descTxtField.resignFirstResponder()
-            validateRegister()
+            goHomeScreen()
         }
         
         return true

@@ -7,6 +7,8 @@
 
 import UIKit
 
+let defString = String(stringLiteral: "")
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
