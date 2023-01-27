@@ -12,8 +12,6 @@ class RegisterScreenViewController: UIViewController {
     var addConstraintsRegister = RegisterScreenView()
     var viewModel = RegisterScreenViewModel()
     
-    
-    
     override func loadView() {
         view = addConstraintsRegister
     }
@@ -81,7 +79,6 @@ extension RegisterScreenViewController: UITextFieldDelegate {
             addConstraintsRegister.descTxtField.resignFirstResponder()
             goHomeScreen()
         }
-        
         return true
     }
 }

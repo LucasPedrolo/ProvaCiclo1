@@ -40,7 +40,6 @@ class HomeScreenViewController: UIViewController {
         if let list = self.list {
             goRecipe.getData(data: list)
         }
-        
         navigationController?.pushViewController(goRecipe, animated: true)
     }
 }

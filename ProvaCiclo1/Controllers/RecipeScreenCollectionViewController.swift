@@ -10,9 +10,7 @@ import UIKit
 class RecipeScreenCollectionViewController: UIViewController {
     
     var customView = RecipeCollectionScreenView()
-    
     var list: [List]?
-    
     private let cellId = "cellId"
     
     override func loadView() {

@@ -24,7 +24,6 @@ extension UIView {
         if let trailing = trailing {
             trailingAnchor.constraint(equalTo: trailing, constant: -padding.right).isActive = true
         }
-        
         if size.width != 0 {
             widthAnchor.constraint(equalToConstant: size.width).isActive = true
         }
